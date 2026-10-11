@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class PrimeCheck {
+public class Solution {
 
-    public boolean isPrime(long n) {
+    public static boolean isPrime(long n) {
 
-        // 0 and 1 are not prime 
+        // 0 and 1 are not prime
         if (n <= 1) {
             return false;
         }
@@ -14,18 +14,16 @@ public class PrimeCheck {
         if (n % 2 == 0) {
             return false;
         }
-        //checking all odd nos from 3 to square root of n
+        // Check odd numbers from 3 till the square root of n.
         for (long i = 3; i <= Math.sqrt(n); i += 2) {
             if (n % i == 0) {
                 return false;
             }
         }
         return true;
-
     }
 
-     public static void main(String[] args) {
-
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
         if (isPrime(n)) {
